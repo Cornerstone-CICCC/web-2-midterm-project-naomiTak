@@ -1,0 +1,209 @@
+body.night-mode {
+  color: lightgray;
+}
+body.night-mode header .header_bar {
+  background-color: #17153B;
+}
+body.night-mode header .search_area {
+  background-color: #2E236C;
+}
+body.night-mode header .search_area #search_btn {
+  background-color: #C8ACD6;
+}
+body.night-mode main {
+  background-color: #433D8B;
+}
+body.night-mode main .cards {
+  border: 1px solid #17153B;
+}
+body.night-mode footer {
+  background-color: #17153B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: navy;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.cards {
+  flex-basis: 20%;
+  border-radius: 8px;
+  border: 1px solid #6482AD;
+}
+.cards img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+@media screen and (max-width: 800px) {
+  .cards {
+    flex-basis: 40%;
+  }
+}
+header .header_bar {
+  height: 60px;
+  background-color: #6482AD;
+  display: flex;
+}
+header .header_bar #logo {
+  cursor: pointer;
+}
+header .header_bar #logo img {
+  height: 100%;
+}
+header .header_bar .title {
+  font-size: 32px;
+  margin: auto 0;
+}
+header .header_bar #about {
+  margin: auto 0;
+  margin-left: 10px;
+  cursor: pointer;
+}
+header .header_bar .toggle-mode {
+  margin: 0 10px 0 auto;
+  display: flex;
+}
+header .header_bar .toggle-mode .icon {
+  font-size: 48px;
+  margin: auto 0;
+}
+header .header_bar .toggle-mode .toggle_switch {
+  display: table;
+}
+header .header_bar .toggle-mode .toggle_switch input {
+  display: none;
+}
+header .header_bar .toggle-mode .toggle_switch input:checked + .toggle_label {
+  background-color: #433D8B;
+}
+header .header_bar .toggle-mode .toggle_switch .toggle_label {
+  margin-top: 20px;
+  display: block;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  border-radius: 1.5em;
+  background-color: #E2DAD6;
+  cursor: pointer;
+}
+header .header_bar .toggle-mode .toggle_switch .toggle_label::before {
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 0.3s;
+  content: "";
+}
+header .header_bar .toggle-mode .toggle_switch input:checked + .toggle_label::before {
+  left: calc(100% - 1.25em);
+}
+@media screen and (max-width: 600px) {
+  header .header_bar #logo img {
+    height: 80%;
+    padding-top: 10px;
+  }
+  header .header_bar .title {
+    font-size: 24px;
+  }
+  header .header_bar #about {
+    font-size: 16px;
+  }
+  header .header_bar .toggle-mode .icon {
+    font-size: 32px;
+  }
+  header .header_bar .toggle-mode .toggle_switch .toggle_label {
+    width: 2em;
+    height: 1em;
+  }
+  header .header_bar .toggle-mode .toggle_switch .toggle_label::before {
+    position: absolute;
+    top: 0.2em;
+    left: 0.25em;
+    width: 0.6em;
+    height: 0.6em;
+  }
+}
+header .search_area {
+  position: relative;
+  text-align: center;
+  height: 100px;
+  background-color: #7FA1C3;
+}
+header .search_area .keyword_search {
+  padding-top: 30px;
+}
+header .search_area .keyword_search #keyword {
+  border-radius: 8px;
+  border: 1px solid #6482AD;
+}
+header .search_area .keyword_search #search_btn {
+  background-color: #E2DAD6;
+  color: navy;
+  border: 1px solid #6482AD;
+  font-size: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+main {
+  padding: 10px 40px;
+  background-color: #E2DAD6;
+}
+main .result_area_default .default_results {
+  margin: 20px 0;
+}
+main .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+main .overlay .modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 40%;
+  width: 100%;
+  padding: 2rem 4rem;
+  background-color: #babdd9;
+  color: navy;
+}
+main .overlay .modal p span {
+  color: navy;
+}
+main .overlay .modal button {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background-color: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+main .overlay .modal button:hover {
+  background-color: #C8ACD6;
+}
+
+footer {
+  background-color: #6482AD;
+}
+
+/*# sourceMappingURL=style.css.map */

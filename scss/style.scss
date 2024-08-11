@@ -1,0 +1,213 @@
+@use "variable";
+@use "./parcial/_nightmode.scss";
+//sass -w ./scss/style.scss ./css/style.css
+
+//variable.$color-paleWhite;
+
+body{
+    margin: 0;
+    padding: 0;
+    color: variable.$light-text-color;
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+.cards{
+    flex-basis: 20%;
+    border-radius: 8px;
+    border: 1px solid variable.$light-bar-color;
+    img{
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+    }
+}
+@media screen and (max-width: 800px){
+    .cards{
+        flex-basis: 40%;
+    }
+}
+
+header{
+    .header_bar{
+        height: 60px;
+        background-color: variable.$light-bar-color;
+        display: flex;
+        #logo{
+            cursor: pointer;
+            img{
+                height: 100%;
+            }
+        }
+        .title{
+            font-size: 32px;
+            margin: auto 0
+            }
+        #about{
+            margin: auto 0;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .toggle-mode{
+            margin: 0 10px 0 auto;
+            display: flex;
+            
+            .icon{
+                font-size: 48px;
+                margin: auto 0;
+            }
+            .toggle_switch {
+                display: table;
+                input{
+                    display: none;  
+                }
+    
+                input:checked + .toggle_label {
+                    background-color: variable.$night-result-color;
+                }
+                .toggle_label {
+                margin-top: 20px;
+                display: block;
+                position: relative;
+                width: 3em;
+                height: 1.5em;
+                border-radius: 1.5em;
+                background-color: variable.$light-result-color;
+                cursor: pointer;
+    
+                    &::before {
+                        position: absolute;
+                        top: 0.25em;
+                        left: 0.25em;
+                        width: 1em;
+                        height: 1em;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        transition: 0.3s;
+                        content: "";
+                    }
+                }
+    
+                input:checked + .toggle_label::before {
+                    left: calc(100% - 1.25em);
+                }
+            }
+        }
+        @media screen and (max-width: 600px){
+            #logo{
+                img{
+                    height: 80%;
+                    padding-top: 10px;
+                }
+            }
+            .title{
+                font-size: 24px;
+                }
+            #about{
+                font-size: 16px;
+                }
+            .toggle-mode{
+                .icon{
+                    font-size: 32px;
+                    }
+                .toggle_switch {
+                    .toggle_label {
+                    width: 2em;
+                    height: 1em;
+        
+                        &::before {
+                            position: absolute;
+                            top: 0.2em;
+                            left: 0.25em;
+                            width: .6em;
+                            height: .6em;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+
+    .search_area{
+        position: relative;
+        text-align: center;
+        height: 100px;
+        background-color: variable.$light-search-color;
+        .keyword_search{
+            padding-top: 30px;
+            #keyword{
+                border-radius: 8px;
+                border: 1px solid variable.$light-bar-color;
+            }
+            #search_btn{
+                background-color: variable.$light-result-color;
+                color: variable.$light-text-color;
+                border: 1px solid variable.$light-bar-color;
+                font-size: 24px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+main{
+    padding: 10px 40px;
+    background-color: variable.$light-result-color;
+    .result_area_default{
+            .default_results{
+                margin: 20px 0;
+            }
+        }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        //display: grid;
+        place-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.8);
+
+        .modal {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 40%;
+            width: 100%;
+            padding: 2rem 4rem;
+            background-color: #babdd9;
+            color: variable.$light-text-color;
+
+            p{
+                span{
+                    color: variable.$light-text-color;
+                }
+            }
+    
+            button {
+                width: 50%;
+                margin: 0 auto;
+                padding: .5rem;
+                background-color: #ddd;
+                border-radius: 8px;
+                cursor: pointer;
+                &:hover{
+                    background-color: variable.$night-fourth-color;
+                    }
+                }
+            }
+        }
+    }
+
+footer{
+    background-color: variable.$light-bar-color;
+}
