@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+
+    <title>MidnightPopcorn</title>
+</head>
+<body>
+    <header>
+        <div class="header_bar">
+            <a href="index.html" id="logo"><img src="./img/logo-popcorn.png"></a>
+            <strong class="title">MidnightPopcorn</strong>
+            <h3 id="about">about</h3>
+            
+            <span class="toggle-mode">
+                <span class="icon"><i class="las la-sun"></i></span>
+                <span class="toggle_switch">
+                    <input type="checkbox" id="postTypeToggle" class="toggle_input">
+                    <label for="postTypeToggle" class="toggle_label"></label>
+                </span>
+                <span class="icon"><i class="las la-moon"></i></span>
+            </span>
+        </div>
+        <div class="search_area">
+            <form class="keyword_search">
+                <input type="text" id="keyword">
+                <input type="button" id="search_btn" value="Search">
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="result_area_default">
+            <div class="default_results">
+                <h2>Movies</h2>
+                <div id="trending_movies">
+                </div>
+            </div>
+            <div class="default_results">
+                <h2>TVs</h2>
+                <div id="trending_tvs">
+                </div>
+            </div>
+        </div>
+        <div class="result_area_searched">
+            <h2 id="search_result"></h2>
+            <div id="result_card">
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="modal">
+                <h3>About this website</h3>
+                <p>Welcome to <strong>MidnightPopcorn</strong>, a resource for comprehensive movie/dram information. 
+                    Our platform offers detailed insights into a wide range of films, 
+                    from the latest releases to timeless classics. 
+                    all curated to assist you in making informed choices about your cinematic experience.</p>
+                <button id="close_btn">Close</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright</p>
+    </footer>
+    <script src="./script/script.js"></script>
+</body>
+</html>

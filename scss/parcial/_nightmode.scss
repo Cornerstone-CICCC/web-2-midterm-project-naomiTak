@@ -1,0 +1,25 @@
+@use "../variable";
+
+body.night-mode{
+    color: variable.$night-text-color;
+    header{
+        .header_bar{
+            background-color: variable.$night-bar-color;
+        }
+        .search_area{
+            background-color: variable.$night-search-color;
+            #search_btn{
+                background-color: variable.$night-fourth-color;
+            }
+        }
+    }
+    main{
+        background-color: variable.$night-result-color;
+        .cards{
+            border: 1px solid variable.$night-bar-color;
+        }
+    }
+    footer{
+        background-color: variable.$night-bar-color;
+    }
+}
