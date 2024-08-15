@@ -71,23 +71,37 @@ function buildCards(data, num){
         if(data[i]){
         const div = document.createElement("div")
         div.classList.add("cards")
-        const img = document.createElement("img")
-        img.setAttribute("src", `https://image.tmdb.org/t/p/w342/${data[i].poster_path}`)
 
+        let img = document.createElement("img")
+        if(data[i].poster_path){
+            img = document.createElement("img")
+            img.setAttribute("src", `https://image.tmdb.org/t/p/w342/${data[i].poster_path}`)
+        }else{
+            img = document.createElement("div")
+            img.innerText = "No Image"
+        }
+        img.classList.add("img")
+        
         const media_type = document.createElement("p")
         media_type.innerText = data[i].media_type
 
         const title = document.createElement("h4")
         if(data[i].media_type === "tv"){
-            let years = data[i].first_air_date
-            years = years.substr(0, 4)
-            title.innerText = `${data[i].name} (${years})`
+            title.innerText = `${data[i].name}`
+            if(data[i].first_air_date){
+                let years = data[i].first_air_date
+                years = years.substr(0, 4)
+                title.innerText = `${title.innerText} (${years})`
+            }
+        }else if(data[i].media_type === "movie"){
+            title.innerText = `${data[i].title}`
+            if(data[i].release_date){
+                let years = data[i].release_date
+                years = years.substr(0, 4)
+                title.innerText = `${title.innerText} (${years})`
+            }
         }else{
-        let years = data[i].release_date
-            years = years.substr(0, 4)
-            title.innerText = `${data[i].title} (${years})`
-            
-            
+            title.innerText = `${data[i].name}`
         }
 
         div.appendChild(img)
