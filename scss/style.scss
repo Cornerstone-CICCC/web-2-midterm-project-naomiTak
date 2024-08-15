@@ -21,10 +21,11 @@ body{
     flex-basis: 20%;
     border-radius: 8px;
     border: 1px solid variable.$light-bar-color;
-    img{
+    .img{
         width: 100%;
         overflow: hidden;
         border-radius: 8px 8px 0 0;
+        background-color: gray;
     }
 }
 @media screen and (max-width: 800px){
@@ -160,6 +161,7 @@ header{
 main{
     padding: 10px 40px;
     background-color: variable.$light-result-color;
+
     .result_area_default{
             .default_results{
                 margin: 20px 0;
